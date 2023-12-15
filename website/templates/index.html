@@ -1,0 +1,61 @@
+{% extends "main_layout.html" %}
+    
+{% block content %}
+<aside class="sidebar">
+    <header class="sidebar-header">
+        <h6>{{ formatted_date }}</h6>
+    </header>
+
+    <div class="search-form">
+        <input type="search" placeholder="Search">
+        <label class="search-icon">
+                <p>🔎︎</p>
+        </label>
+    </div>
+            
+    <form class="new-task-form" method=POST>
+        <label for="">New Task</label>
+        <div>
+            <input class="task-input" type="text" name="input_content" id="input_content", placeholder="Add a new task">
+        </div>
+        <div>
+            <input class="task-input" type="date" id="input_due_date" name="input_due_date">
+        </div>
+        <div>
+                <button class="btn-add" type="submit">Add</button>
+        </div>
+    </form>
+</aside>
+
+<div class="main-content task-content">
+    <div class="task-table">
+        <h2 class="solution-heading">Today's plan</h2>
+        {% if tasks|length < 1 %}
+        <span class="text-no-tasks">There are no tasks for the day!</span>
+        {% else %}
+        <table>
+            <caption>Things to-do</caption>
+            
+            <thead>
+                <tr>
+                <th>Task</th>
+                <th>Due date</th>
+                <th>Actions</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="">Update</a>
+                        <a href="">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {% endif %}
+    </div> 
+</div>   
+{% endblock %}

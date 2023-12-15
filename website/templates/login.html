@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Daily Planner - Login</title>
+</head>
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert-msg">
+            {{ message }}
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+        {% else %}
+        <div class="success-msg">
+            {{ message }}
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <section class="page">
+        <div class="title-content">
+            <h3>Daily Planner</h3>
+            <p>Plan your day and be more productive</p>
+        </div>
+        <div class="form-box-log">
+            <form class="contact-form" method="POST">
+                <h6>Log in</h6>
+                <div class="input-box">
+                    <input type="email" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <div>
+                    <button class="btn-submit" type="submit">Log in</button>
+                </div>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="/sign-up" class="login-link">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
