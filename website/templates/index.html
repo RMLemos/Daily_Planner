@@ -6,12 +6,12 @@
         <h6>{{ formatted_date }}</h6>
     </header>
 
-    <div class="search-form">
-        <input type="search" placeholder="Search">
-        <label class="search-icon">
+    <form method="POST" class="search-form">
+        <input type="search" name="search_query" placeholder="Search">
+        <button type="submit" class="search-icon" >
                 <p>🔎︎</p>
-        </label>
-    </div>
+        </button>
+    </form>
             
     <form class="new-task-form" method=POST>
         <label for="">New Task</label>
