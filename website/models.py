@@ -16,6 +16,6 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(50))
     email = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(50))
-    todos = db.relationship('Todo')
+    todos = db.relationship('Todo', backref='user', lazy=True)
 
 

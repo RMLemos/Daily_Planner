@@ -53,10 +53,10 @@ def sign_up():
         elif len(password1) < 7:
             flash('Passoword must be at least 6 characters.', category='error')
         else:
-            new_user = User (name=name, email=email, password=generate_password_hash(password1, method='pbkdf2:sha256'))
+            new_user = User(name=name, email=email, password=generate_password_hash(password1, method='pbkdf2:sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            #login_user(new_user, remember=True) This line allows the new user to go to main page 
             flash('Account created!', category='success')
             return redirect(url_for('views.home'))
 

@@ -31,11 +31,10 @@
     <div class="task-table">
         <h2 class="solution-heading">Today's plan</h2>
         {% if tasks|length < 1 %}
-        <span class="text-no-tasks">There are no tasks for the day!</span>
+        <span class="text-no-tasks"> There are no tasks for the day!</span>
         {% else %}
         <table>
             <caption>Things to-do</caption>
-            
             <thead>
                 <tr>
                 <th>Task</th>
@@ -43,17 +42,18 @@
                 <th>Actions</th>
                 </tr>
             </thead>
-            
             <tbody>
+            {% for task in tasks %}
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>{{ task.content }}</td>
+                    <td> {{ task.due_date }} </td>
                     <td>
-                        <a href="">Update</a>
-                        <a href="">Delete</a>
+                        <a href="#">Update</a>
+                        <a href="#">Delete</a>
                     </td>
                 </tr>
             </tbody>
+        {% endfor %}
         </table>
         {% endif %}
     </div> 
