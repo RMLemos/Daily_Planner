@@ -1,9 +1,9 @@
-![To do list Banner Image](static/img/Github_header.png)
+![To do list Banner Image](/website/static/img/Github_header.png)
 <h2 align='center'>Daily Planner</h2>
 
 This project is a functional applicaction in Python and Flask. With this application we can do tasks lists and update them.
 
-![Morse Code Translator Banner Image](static/img/Github_header.png)
+![Morse Code Translator Banner Image](/website/static/img/daily_planner_app.png)
 
 ### Usage
 
