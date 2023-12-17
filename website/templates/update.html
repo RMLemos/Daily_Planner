@@ -30,19 +30,19 @@
 <div class="main-content task-content">
     <div class="task-table">
         <h2 class="solution-heading">Update Task</h2>
-        <form class="new-task-form" action="/update/{{task.id}}" method=POST>
+        <form class="update-task-form" action="/update/{{task.id}}" method=POST>
             <div>
-                <input class="task-input" type="text" name="input_content" id="input_content", value="{{task.content}}">
+                <input class="update-input" type="text" name="input_content" id="input_content", value="{{task.content}}">
             </div>
             <div>
-                <input class="task-input" type="date" id="input_due_date" name="input_due_date", value="{{due_date_formatted}}">
+                <input class="update-input" type="date" id="input_due_date" name="input_due_date", value="{{due_date_formatted}}">
             </div>
             <div>
                 <label> The task is completed? </label>
-                <input class="task-input" type="checkbox" id="input_completed" name="input_completed" {% if task.completed == 1 %}checked{% endif %}>
+                <input class="checkbox-done" type="checkbox" id="input_completed" name="input_completed" {% if task.completed == 1 %}checked{% endif %}>
             </div>
             <div>
-                    <button class="btn-add" type="submit">Update</button>
+                    <button class="btn-update" type="submit">Update</button>
             </div>
         </form>
     

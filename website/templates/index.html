@@ -49,17 +49,17 @@
                     <td class="line-done">{{ task.content }}</td>
                     <td> {{ task.due_date.date() }} </td>
                     <td class="actions">
+                        <a href="/complete/{{task.id}}">✅</a>
                         <a href="/update/{{task.id}}">✎</a>
                         <a href="/delete/{{task.id}}">❌</a>
-                        <a href="/complete/{{task.id}}">✅</a>
                     </td>
                     {% else %}
                     <td>{{ task.content }}</td>
                     <td> {{ task.due_date.date() }} </td>
                     <td class="actions">
+                        <a href="/complete/{{task.id}}">✅</a>
                         <a href="/update/{{task.id}}">✎</a>
                         <a href="/delete/{{task.id}}">❌</a>
-                        <a href="/complete/{{task.id}}">✅</a>
                     </td>
                     {% endif %}
                 </tr>
@@ -67,6 +67,6 @@
         {% endfor %}
         </table>
         {% endif %}
-    </div> 
+    </div>
 </div>   
 {% endblock %}
