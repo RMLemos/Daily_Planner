@@ -64,6 +64,12 @@ def update(id):
         task.content = request.form['input_content']
         input_due_date = request.form['input_due_date']
         task.due_date = datetime.strptime(input_due_date, '%Y-%m-%d')
+
+        if 'input_completed' in request.form:
+            task.completed = 1
+        else:
+            task.completed = 0
+        
         db.session.commit()
         flash('Task added!', category='success')
         return redirect(url_for('views.home'))

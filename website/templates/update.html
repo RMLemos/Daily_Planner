@@ -38,6 +38,10 @@
                 <input class="task-input" type="date" id="input_due_date" name="input_due_date", value="{{due_date_formatted}}">
             </div>
             <div>
+                <label> The task is completed? </label>
+                <input class="task-input" type="checkbox" id="input_completed" name="input_completed" {% if task.completed == 1 %}checked{% endif %}>
+            </div>
+            <div>
                     <button class="btn-add" type="submit">Update</button>
             </div>
         </form>
