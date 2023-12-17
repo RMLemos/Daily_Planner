@@ -402,16 +402,16 @@ h6 {
 }
 
 .solution-heading {
-    color: #000400;
+    color: #001400;
     line-height: 1;
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
     text-align: center;
 }
 
 .text-no-tasks{
     font-size: 2em;
     font-weight: 700;
-    color: #000400;
+    color: #001400;
     text-align: center;
 }
 
@@ -422,7 +422,7 @@ table {
 }
 
 table caption{
-    color: #000400; 
+    color: #001400; 
     font-family: "Raleway", Helvetica, sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -433,13 +433,12 @@ table td, table th {
     white-space: nowrap;
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #001400;
 }
 
 table th {
-    background: #000400;
+    background: #001400;
     color: #fff;
-    border-bottom: 1px solid #ddd;
 }
 
 

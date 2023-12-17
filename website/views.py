@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
 from datetime import datetime, date
 from .models import Todo
@@ -15,8 +15,6 @@ def home():
         if search_query:
             results = Todo.query.filter(Todo.content.ilike(f"%{search_query}%")).all()
             return render_template('index.html', tasks=results, user=current_user, search_query=search_query)
-       
-    if request.method == 'POST':
         
         # Se não for uma busca, processar adição de tarefa
         input_content = request.form.get('input_content')
@@ -41,3 +39,34 @@ def home():
     return render_template("index.html", user=current_user, formatted_date=formatted_date, tasks=tasks)
 
 
+@views.route('/delete/<int:id>')
+@login_required
+def delete(id):
+    task_delete = Todo.query.get_or_404(id)
+
+    db.session.delete(task_delete)
+    db.session.commit()
+    return redirect(url_for('views.home'))
+
+@views.route('/update/<int:id>', methods=['GET', 'POST'])
+@login_required
+def update(id):
+    task = Todo.query.get_or_404(id)
+   
+    due_date_formatted = task.due_date.strftime('%Y-%m-%d')
+   
+    #task.due_date = datetime.strptime(due_date_formatted, '%Y-%m-%d').date()
+
+    current_date = datetime.now()
+    formatted_date = current_date.strftime("%B, %d %Y")
+
+    if request.method == 'POST':
+        task.content = request.form['input_content']
+        input_due_date = request.form['input_due_date']
+        task.due_date = datetime.strptime(input_due_date, '%Y-%m-%d')
+        db.session.commit()
+        flash('Task added!', category='success')
+        return redirect(url_for('views.home'))
+
+    else:
+        return render_template("update.html", task=task, user=current_user, formatted_date=formatted_date, due_date_formatted=due_date_formatted)
