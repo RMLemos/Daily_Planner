@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
 from datetime import datetime, date
-from .models import Todo
+from .models import Todo, func
 from . import db
 
 views = Blueprint('views', __name__)
@@ -70,3 +70,14 @@ def update(id):
 
     else:
         return render_template("update.html", task=task, user=current_user, formatted_date=formatted_date, due_date_formatted=due_date_formatted)
+    
+@views.route('/complete/<int:id>')
+@login_required
+def completed_task(id):
+    task = Todo.query.get_or_404(id)
+
+    if task:
+        task.completed = 1
+        task.date_updated = func.now()
+        db.session.commit()
+    return redirect(url_for('views.home'))
