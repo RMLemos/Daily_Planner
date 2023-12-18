@@ -7,15 +7,21 @@ This project is a functional web applicaction in Python and Flask. With this app
 
 ### Usage
 
-1. After cloning this repository, run:
+1. After cloning this repository, install the requirements listed in the 'requirements.txt' file:
+
+```
+pip install -r requirements.txt
+```
+
+2. Run:
 
 ```
 python main.py 
 ```
 
-2. To view the app: go to `http://127.0.0.1:5000` (This was developed on the default development server)
-3. In the login page, click in Sign up and create an account in the sign up page. Then, log in.
-4. Once in the index page, start creating your to-do list.
+3. To view the app: go to `http://127.0.0.1:5000` (This was developed on the default development server)
+4. In the login page, click in Sign up and create an account in the sign up page. Then, log in.
+5. Once in the index page, start creating your to-do list.
    
 ### Tools
 + Flask
