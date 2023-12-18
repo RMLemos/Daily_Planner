@@ -1,9 +1,9 @@
-![To do list Banner Image](/website/static/img/Github_header.png)
+![To-do list Banner Image](/website/static/img/Github_header.png)
 <h2 align='center'>Daily Planner</h2>
 
-This project is a functional applicaction in Python and Flask. With this application we can do tasks lists and update them.
+This project is a functional web applicaction in Python and Flask. With this application we can create a to-do list and update and/or delete them.
 
-![Morse Code Translator Banner Image](/website/static/img/daily_planner_app.png)
+![To-do list main Image](/website/static/img/daily_planner_app.png)
 
 ### Usage
 
@@ -13,7 +13,14 @@ This project is a functional applicaction in Python and Flask. With this applica
 python main.py 
 ```
 
-2. Enter the text you want to convert to Morse code when prompted and press the button "Convert".
-3. The program will display the Morse code representation of your input.
-
+2. To view the app: go to `http://127.0.0.1:5000` (This was developed on the default development server)
+3. In the login page, click in Sign up and create an account in the sign up page. Then, log in.
+4. Once in the index page, start creating your to-do list.
+   
 ### Tools
++ Flask
++ Flask-SQLAlchemy
++ Flask-login
++ Jinja
++ Html
++ Css
