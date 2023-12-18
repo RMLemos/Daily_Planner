@@ -13,7 +13,7 @@ This project is a functional web applicaction in Python and Flask. With this app
 python main.py 
 ```
 
-2. To view the app: go to `http://127.0.0.1:5000` 
+2. To view the app: go to `http://127.0.0.1:5000` (This was developed on the default development server)
 3. In the login page, click in Sign up and create an account in the sign up page. Then, log in.
 4. Once in the index page, start creating your to-do list.
    
