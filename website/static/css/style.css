@@ -258,7 +258,7 @@ h6 {
     background: transparent;
     text-decoration: none; 
     border-radius: 5px;
-    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+    transition: background-color 0.3s ease;
     border: 1px solid #fff;
 }
 
@@ -414,7 +414,7 @@ h6 {
     color: #001400;
     text-align: center;
     width: 100%;
-    margin: auto;  /* Adiciona margem automática para centralizar verticalmente */
+    margin: auto;  /* Adds automatic margin to center vertically */
     display: table;
 }
 

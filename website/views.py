@@ -11,13 +11,13 @@ views = Blueprint('views', __name__)
 @login_required
 def home():
     if request.method == 'POST':
-        # Se for uma busca, processar a pesquisa
+        # If it is a search, process the search
         search_query = request.form.get('search_query')
         if search_query:
             results = Todo.query.filter(Todo.content.ilike(f"%{search_query}%")).all()
             return render_template('index.html', tasks=results, user=current_user, search_query=search_query)
         
-        # Se não for uma busca, processar adição de tarefa
+        # If it is not search, process task addition
         input_content = request.form.get('input_content')
         input_due_date = request.form.get('input_due_date')
 
@@ -31,7 +31,7 @@ def home():
             else:
                 flash('Must add a task and a due date!', category='error')
         
-    # Lógica para exibir tarefas de hoje
+    # Logic for displaying today's tasks
     today = date.today()
     tasks = Todo.query.filter(db.func.date(Todo.due_date) == today).order_by(Todo.due_date).all()
 
